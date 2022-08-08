@@ -66,15 +66,24 @@
       ansible.builtin.debug:
         msg: "{{ansible_processor}}"
 
+## register is used to save a value of a variable
 - name: Register a Variable
   hosts: all
   tasks:
     - name: Run uptime command
       ansible.builtin.shell: uptime
       register: OUT
-    - name: Print OUT variable
+#    - name: Print OUT variable
+#      ansible.builtin.debug:
+#        msg: "{{OUT.stdout}}"
+
+    - name: Declare a standard variable name
+      ansible.builtin.set_fact:
+        UPTIME_STDOUT: "{{OUT.stdout}}"
+
+    - name: Print UPTIME_STDOUT
       ansible.builtin.debug:
-        msg: "{{OUT.stdout}}"
+        msg: "{{UPTIME_STDOUT}}"
 
 
 
