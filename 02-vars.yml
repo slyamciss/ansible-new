@@ -61,7 +61,7 @@
   tasks:
     - name: Print Hostname
       ansible.builtin.debug:
-        msg: Hostname == {{ansible_Hostname}}
+        msg: Hostname == {{Hostname}}
 
 
 
