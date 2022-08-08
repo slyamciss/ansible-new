@@ -16,6 +16,22 @@
     - name: Print URL
       ansible.builtin.debug:
         msg: URL = {{URL}}
+# we can load all the variables from a file, since it is on play level, all tasks can access those variables
+
+- name: Variables on Tasks Level
+  hosts: all
+  tasks:
+    - name: Print URL in tasks1
+      ansible.builtin.debug:
+        msg: URL == {{URL}}
+      vars:
+        URL: tasks1.example.com
+
+    - name: Print URL in task2
+      ansible.builtin.debug:
+        msg: URL == {{URL}}
+      vars:
+        URL: tasks2.example.com
 
 
 
