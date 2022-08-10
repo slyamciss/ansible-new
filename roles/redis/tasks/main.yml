@@ -5,7 +5,7 @@
 
 - name: Install Redis
   ansible.builtin.yum:
-    name: Redis
+    name: redis
     state: installed
 
 - name: Update Redis Config File
