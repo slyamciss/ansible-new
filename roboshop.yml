@@ -15,3 +15,9 @@
   become: yes
   roles:
     - catalogue
+
+- name: Setup Redis Component
+  hosts: REDIS
+  become: yes
+  roles:
+    - redis
