@@ -21,3 +21,9 @@
   become: yes
   roles:
     - redis
+
+- name: Setup User Component
+  hosts: USER
+  become: yes
+  roles:
+    - user
