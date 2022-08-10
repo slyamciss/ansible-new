@@ -1,6 +1,6 @@
 - name: Setup redis Repo
   ansible.builtin.copy:
-    src: redis.repos
+    src: redis.repo
     dest: /etc/yum.repos.d/redis.repos
 
 - name: Install Redis
