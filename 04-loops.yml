@@ -3,5 +3,8 @@
   tasks:
     - name: Demo
       debug:
-        msg: Hello from loops
+        msg: Hello {{item}}
+      loop:
+        - Tariq
+        - Bilal
 
