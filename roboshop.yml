@@ -38,10 +38,10 @@
   roles:
     - user
 
-# - name: Setup User Component
-#   hosts: USER
-#   become: yes
-#   tags:
-#     - user
-#   roles:
-#     - user
+- name: Setup Cart Component
+  hosts: CART
+  become: yes
+  tags:
+    - cart
+  roles:
+    - cart
