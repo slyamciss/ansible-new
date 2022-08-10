@@ -1,0 +1,6 @@
+[FRONTEND]
+frontend.roboshop.internal
+[MONGODB]
+mongodb.roboshop.internal
+[CARD]
+card.roboshop.internal
