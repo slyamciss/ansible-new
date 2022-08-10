@@ -30,6 +30,27 @@
     src: /tmp/catalogue-main/
     dest: /home/roboshop/catalogue/
     remote_src: yes
+  become_user: roboshop
+
+- name: Install Catalogue Dependencies
+  community.general.npm:
+    path: /home/roboshop/catalogue
+  become_user: roboshop
+
+- name: Setup Catalogue SystemD Config File
+  ansible.builtin.template:
+    src: systemd.service
+    dest: /etc/systemd/system/catalogue.service
+
+- name: Start Catalogue Service
+  ansible.builtin.systemd:
+    name: Catalogue
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
+
+
+
 
 
 
